@@ -1,0 +1,54 @@
+version: "3.3"
+
+services:
+
+  '0x00b':
+    build:
+      context: ./0x00b/
+    environment:
+      - LISTEN_PORT=7004
+    ports:
+      - "7004:7004"
+    hostname: '0x00b'
+
+  '0xb0f':
+    build:
+      context: ./0xb0f/
+    environment:
+      - LISTEN_PORT=7007
+    ports:
+      - "7007:7007"
+    hostname: '0xb0f'
+  
+  rebellious_child:
+    build:
+      context: ./rebellious_child/
+    environment:
+      - LISTEN_PORT=7008
+    ports:
+      - "7008:7008"
+    hostname: 'Rebellious Child'
+
+  formatter:
+    build:
+      context: ./formatter/
+    environment:
+      - LISTEN_PORT=7009
+    ports:
+      - "7009:7009"
+
+  off-the-road:
+    build:
+      context: ./off-the-road/
+    environment:
+      - LISTEN_PORT=7010
+    ports:
+      - "7010:7010"
+    
+  free_win:
+    build:
+      context: ./free_win/
+    environment:
+      - LISTEN_PORT=7011
+    ports:
+      - "7011:7011"

@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  discord_app:
+    build:
+      context: ./app/
+      dockerfile: Dockerfile
+    restart: always
+    container_name: discord_appli
+    ports:
+      - "8083:8083"

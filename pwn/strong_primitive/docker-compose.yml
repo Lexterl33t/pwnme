@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+
+  strongprimitive:
+    build:
+      context: ./
+    ports:
+      - 22

@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model messages_tbl {
+  msg_id      Int       @id @default(autoincrement())
+  msg_content String    @db.VarChar(140)
+  usr_id      Int
+  users_tbl   users_tbl @relation(fields: [usr_id], references: [usr_id], onUpdate: Restrict, map: "messages_tbl_ibfk_1")
+
+  @@index([usr_id], map: "usr_id")
+}
+
+model users_tbl {
+  usr_id          Int            @id @default(autoincrement())
+  usr_username    String         @db.VarChar(10)
+  usr_permissions Boolean
+  messages_tbl    messages_tbl[]
+}

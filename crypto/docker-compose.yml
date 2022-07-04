@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+
+  expo:
+    build:
+      context: ./exponentialmachine/
+    environment:
+      - LISTEN_PORT=7003
+    ports:
+      - "7003:7003"

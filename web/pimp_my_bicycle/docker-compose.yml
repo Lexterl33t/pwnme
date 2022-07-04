@@ -1,0 +1,49 @@
+version: "3.3"
+services:
+  bot:
+    build:
+      context: ./bot/
+      dockerfile: Dockerfile
+    restart: always
+    container_name: pmb_bot
+    ports:
+      - "3000:3000"
+    networks:
+      - internalapp
+    depends_on:
+      - pmb
+
+  pmb:
+    build:
+      context: ./src/
+      dockerfile: Dockerfile
+    restart: always
+    container_name: pmb_appli
+    ports:
+      - "8081:80"
+    environment:
+      - FLAG_BIKE=PWNME{Th1s_Is_A_Re41Ly_W3iRd_BiK3}
+    networks:
+      - internalapp
+      - default
+
+  pmbbdd:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: pmb_bdd
+    expose:
+      - 3306
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_USER=pmbuser
+      - MYSQL_PASSWORD=mPdD3q67dEv1l4ndD4rk
+      - MYSQL_DATABASE=pmb
+    volumes:
+      - "./bdd/:/docker-entrypoint-initdb.d/"
+    networks:
+      - internalapp
+
+networks:
+  internalapp:
+    internal: true

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/style.css" rel="stylesheet" type="text/css">
+  <title>Volatile Storage</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="/logout">Logout</a>
+  </div>
+  <div class="content">
+    <h1>
+      Hello, <%- username %> !
+    </h1>
+    <p>Here is your password: <strong>
+        <%- password %>
+      </strong>
+    </p>
+    <p>Write it in a safe place !</p>
+
+    <h2>List of your secrets</h2>
+    <ul>
+      <% for(let s of secrets) { %>
+        <li>
+          <%- s.name %> -> <%- s.value %>
+        </li>
+        <% } %>
+    </ul>
+
+    <form autocomplete='off' class='form' method="post" action="/secret">
+      <div class='control'>
+        <h1>
+          New secret
+        </h1>
+      </div>
+      <div class='control block-cube block-input'>
+        <input name='name' placeholder='Name of the secret' type='text'>
+        <div class='bg-top'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='bg-right'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='bg'>
+          <div class='bg-inner'></div>
+        </div>
+      </div>
+      <div class='control block-cube block-input'>
+        <input name="value" placeholder='Value' type='text'>
+        <div class='bg-top'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='bg-right'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='bg'>
+          <div class='bg-inner'></div>
+        </div>
+      </div>
+      <button class='btn block-cube block-cube-hover' type='submit'>
+        <div class='bg-top'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='bg-right'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='bg'>
+          <div class='bg-inner'></div>
+        </div>
+        <div class='text'>
+          Create
+        </div>
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+version: "3.3"
+
+services:
+
+  omw:
+    build:
+      context: ./on_my_way/
+    environment:
+      - LISTEN_PORT=7000
+    ports:
+      - "7000:7000"
+
+  omw2:
+    build:
+      context: ./on_my_way_2/
+    environment:
+      - LISTEN_PORT=7001
+    ports:
+      - "7001:7001"
+
+  omw3:
+    build:
+      context: ./on_my_way_3/
+    environment:
+      - LISTEN_PORT=7002
+    ports:
+      - "7002:7002"
+
+  findme1:
+    build:
+      context: ./find_me_1/
+    environment:
+      - LISTEN_PORT=7020
+    ports:
+      - "7020:7020"
+
+  findme2:
+    build:
+      context: ./find_me_2/
+    environment:
+      - LISTEN_PORT=7021
+    ports:
+      - "7021:7021"

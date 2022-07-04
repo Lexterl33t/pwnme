@@ -1,0 +1,3 @@
+CFLAGS=-no-pie
+
+0x00b: 0x00b.c

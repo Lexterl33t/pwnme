@@ -1,0 +1,13 @@
+{
+    "bot": {
+        "cookies": {
+            "name": "Flag",
+            "value": "PWNME{EaZy_XsS_4_C4ts_To_BeG1n!}",
+            "domain": "http://catastrophe",
+            "secure": false,
+            "httpOnly": false
+        },
+        "frequency": 1,
+        "target": "http://catastrophe:3000"
+    }
+}

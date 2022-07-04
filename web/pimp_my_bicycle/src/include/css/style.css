@@ -1,0 +1,169 @@
+/* anim duration */
+
+@font-face {
+	font-family: "PMBFont";
+	src: url('../dolphins.ttf') format('truetype');
+}
+
+.row {
+	margin: 0;
+}
+
+body {
+	font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+	background-image: url("../images/background.jpg");
+	background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "PMBFont", Arial, sans-serif;
+}
+
+
+
+.content {
+	padding: 2em 0em;
+}
+
+#navbar {
+	background-color: rgb(220, 245, 226);
+	padding: 0;
+}
+
+#carouselHome {
+	margin-top: 5em;
+	padding: 1em 0em;
+	background-color: #b300b3;
+}
+
+#carouselHome h2 {
+	color: #ffe08c;
+	text-shadow: 2px 2px 2px black;
+}
+
+#carouselHome p {
+	font-weight: bold;
+	color: white;
+	text-shadow: 2px 2px 2px black;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-color: #cd82ff;
+	color: white;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: #1f1f2e;
+}
+
+.headerContainer {
+	width: 1110px;
+	max-width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.headerContainer div {
+	display: flex;
+	align-items: center;
+}
+
+.headerRight a {
+	transition-duration: 150ms;
+	display: inline-block;
+	padding: 2em;
+	color: white;
+	text-decoration: none;
+}
+
+.headerRight a:hover {
+	background-color: white;
+	color: black;
+}
+
+.headerLeft {
+	width: 60%;
+}
+
+.headerRight {
+	justify-content: flex-end;
+	width: 40%;
+}
+
+.headerProfile a {
+	padding: 1.5em 2em;
+}
+
+.card-header0,
+.card-header2 {
+	padding: 5px;
+	font-weight: 600;
+	background-color: #ffe08c;
+}
+
+.card-header1,
+.card-header3 {
+	padding: 5px;
+	font-weight: 600;
+	background-color: #cd82ff;
+}
+
+nav {
+	font-size: 1.1em;
+	font-variant: small-caps;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+.align {
+	margin-left: 10vh;
+}
+
+li {
+	margin-left: 45px;
+	margin-right: 45px;
+	margin-bottom: 0;
+}
+
+.shopButton {
+	margin: 80px;
+}
+
+#cart {
+	border: 1px solid white;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.faq {
+	margin-top: 0;
+	margin-left: 20%;
+	padding: 30px;
+	width: 60%;
+}
+
+.card {
+	display: block;
+	margin: 1em;
+}
+
+a.active {
+	color: yellow;
+}

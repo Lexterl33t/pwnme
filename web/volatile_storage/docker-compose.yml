@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+
+  volatile:
+    build:
+      context: ./app/
+      dockerfile: Dockerfile
+    restart: always
+    container_name: volatile_appli
+    ports:
+      - "8082:3000"
+    environment:
+      - FLAG_VOLATILE=PWNME{G3Ner47i0n_fR0M_u53R_1nPu7_4r3_Pr3d1cTiBl3}

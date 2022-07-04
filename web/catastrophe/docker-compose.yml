@@ -1,0 +1,45 @@
+version: "3.3"
+services:
+  bot:
+    build:
+      context: ./bot/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - internalapp
+      - default
+    depends_on:
+      - catastrophe
+
+  catastrophe:
+    build:
+      context: ./app/
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000
+    environment:
+      - DATABASE_URL=mysql://user:mPdD3q67dEv1l4ndD4rkos@catbdd:3306/db
+    networks:
+      - internalapp
+      - default
+
+  catbdd:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    expose:
+      - 3306
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=mPdD3q67dEv1l4ndD4rkos
+      - MYSQL_DATABASE=db
+    volumes:
+      - "./bdd/:/docker-entrypoint-initdb.d/"
+    networks:
+      - internalapp
+
+networks:
+  internalapp:
+    internal: true

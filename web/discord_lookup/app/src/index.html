@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+    rel="stylesheet">
+  <title>Discord Lookup</title>
+</head>
+
+<style>
+  html,
+  body,
+  .background {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: #7289DA;
+    text-align: center
+  }
+
+  @font-face {
+    font-family: Whitney;
+    font-style: light;
+    font-weight: 300;
+    src: url(https://discordapp.com/assets/16801bfdf51ed88e69bc90626a3ea436.woff) format('woff')
+  }
+
+  @font-face {
+    font-family: Whitney;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://discordapp.com/assets/d153359b5d87601d2b9c708b7ae2db02.woff) format('woff')
+  }
+
+  @font-face {
+    font-family: Whitney;
+    font-style: medium;
+    font-weight: 600;
+    src: url(https://discordapp.com/assets/a934ab008c7f6a2274ec441f6be0696a.woff) format('woff')
+  }
+
+  @font-face {
+    font-family: Whitney;
+    font-style: semibold;
+    font-weight: 650;
+    src: url(https://discordapp.com/assets/877ef48bf9fcfee590f0ba64de101b59.woff) format('woff')
+  }
+
+  @font-face {
+    font-family: Whitney;
+    font-style: bold;
+    font-weight: 700;
+    src: url(https://discordapp.com/assets/2e004dd717cdc58b9ccb361d286ebbce.woff) format('woff')
+  }
+
+  .discordlogo {
+    background-image: url(https://discordapp.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg);
+    width: 250px;
+    height: 65px;
+    background-size: 100%;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-left: -5px;
+    margin-bottom: -22px
+  }
+
+  .title {
+    font-smooth: auto;
+    padding-top: 80px;
+    font-family: 'Whitney', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 40px
+  }
+
+  .background {
+    background-image: url(https://cdn.discordapp.com/attachments/185046628732895232/204497752091000832/bg3.svg);
+    background-size: 50%;
+    height: 100%;
+  }
+
+  .step {
+    font-smooth: auto;
+    font-family: 'Whitney', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    opacity: 0.8
+  }
+
+  .output {
+    /* text-align: left; */
+    font-family: 'Whitney', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.9
+  }
+
+  .output ul {
+    list-style-type: none;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Whitney', sans-serif;
+    font-size: 13px;
+    opacity: 0.8;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 100px;
+  }
+
+  .link:hover {
+    opacity: 1;
+  }
+
+  .instructions {
+    font-smooth: auto;
+    font-family: 'Whitney', sans-serif;
+    font-weight: 650;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+  }
+
+  .highlight {
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    opacity: 1;
+    border-radius: 2px;
+    padding: 0 5px;
+    color: #fff
+  }
+
+  .highlight:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .wsite {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Whitney', sans-serif;
+    font-size: 18px;
+    opacity: 0.5;
+    transition: all 100ms ease
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  button[type=submit] {
+    background-color: #046daa;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+
+
+  <div class="background">
+    <div class="title">Discord Lookup</div>
+    <div style="height:20px"></div>
+    <div class="instructions">
+      <p>
+        In order to use this API, this bot must be in the requested server
+      </p>
+      <p>
+        You can add the bot to your server with this link <a
+          href="https://discord.com/api/oauth2/authorize?client_id={{client_id}}&permissions=0&scope=bot"
+          target="_blank">Invite Bot</a>
+      </p>
+    </div>
+    <div style="height:10px"></div>
+    <div class="step">Get some information from a Discord server ID</div>
+    <div style="height:20px"></div>
+    <form method="post" action="/">
+      <div class="inputs">
+        <input type="text" class="" placeholder="000000000000000000" aria-label="Discord server ID" name="server">
+        <div style="margin-left: 15px;">
+          <button type="submit" class="">Get informations</button>
+        </div>
+      </div>
+    </form>
+
+    <div style="height:10px"></div>
+    <div class="output">{{ error|safe }}
+      {{ results|safe }}</div>
+</body>
+
+</html>
